@@ -37,9 +37,12 @@ namespace Morse
                     "--..", "", "", "", "","··--·-",  //90-95
                 };
 
+
+
             //
             String Message = "";
 
+            //Encoding code.
             if (rbnEncode.Checked)
             {
                 //Repeates for every letter entered.
@@ -50,9 +53,36 @@ namespace Morse
                 }
             }
 
+            //Decoding code. 
             else
             {
-                Message = "Sorry, this function is not supported yet.";
+                //Converts the input into an array of the words entered.
+                string[] words = txtInput.Text.Split(' ');
+
+                for (int i=0; i < words.Length; i++)
+                {
+                    try
+                    {
+                        //Checks for spaces and fixes the output.
+                        if (words[i] == "")
+                        {
+                            Message = Message + " ";
+                        }
+                        else
+                        {
+                            //Searchs the array for input and converts the position to the ASCII letter.
+                            int index1 = Array.IndexOf(Morse, words[i].ToUpper());
+                            char character = (char)index1;
+                            string text = character.ToString();
+                            Message = Message + text;
+                        }
+                    }
+                    catch
+                    {
+                        Message = Message;
+                    }
+                    
+                }
             }
 
             //Output Code
