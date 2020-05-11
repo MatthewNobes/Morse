@@ -46,9 +46,9 @@
             // grbInput
             // 
             this.grbInput.Controls.Add(this.txtInput);
-            this.grbInput.Location = new System.Drawing.Point(12, 118);
+            this.grbInput.Location = new System.Drawing.Point(12, 12);
             this.grbInput.Name = "grbInput";
-            this.grbInput.Size = new System.Drawing.Size(1053, 356);
+            this.grbInput.Size = new System.Drawing.Size(1053, 420);
             this.grbInput.TabIndex = 0;
             this.grbInput.TabStop = false;
             this.grbInput.Text = "Input";
@@ -59,7 +59,7 @@
             this.txtInput.Location = new System.Drawing.Point(6, 25);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(1040, 324);
+            this.txtInput.Size = new System.Drawing.Size(1040, 389);
             this.txtInput.TabIndex = 0;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             // 
@@ -79,9 +79,9 @@
             // grbOutput
             // 
             this.grbOutput.Controls.Add(this.txtOutput);
-            this.grbOutput.Location = new System.Drawing.Point(12, 480);
+            this.grbOutput.Location = new System.Drawing.Point(12, 438);
             this.grbOutput.Name = "grbOutput";
-            this.grbOutput.Size = new System.Drawing.Size(1053, 362);
+            this.grbOutput.Size = new System.Drawing.Size(1053, 404);
             this.grbOutput.TabIndex = 2;
             this.grbOutput.TabStop = false;
             this.grbOutput.Text = "Output";
@@ -93,7 +93,7 @@
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(1040, 324);
+            this.txtOutput.Size = new System.Drawing.Size(1040, 373);
             this.txtOutput.TabIndex = 1;
             // 
             // rbnDecode
@@ -111,9 +111,9 @@
             // 
             this.grbTypes.Controls.Add(this.rbnEncode);
             this.grbTypes.Controls.Add(this.rbnDecode);
-            this.grbTypes.Location = new System.Drawing.Point(12, 12);
+            this.grbTypes.Location = new System.Drawing.Point(218, 25);
             this.grbTypes.Name = "grbTypes";
-            this.grbTypes.Size = new System.Drawing.Size(200, 100);
+            this.grbTypes.Size = new System.Drawing.Size(188, 89);
             this.grbTypes.TabIndex = 4;
             this.grbTypes.TabStop = false;
             this.grbTypes.Text = "Encode or Decode";
@@ -121,20 +121,21 @@
             // grbOptions
             // 
             this.grbOptions.Controls.Add(this.btnPlay);
-            this.grbOptions.Location = new System.Drawing.Point(219, 12);
+            this.grbOptions.Controls.Add(this.grbTypes);
+            this.grbOptions.Location = new System.Drawing.Point(1071, 12);
             this.grbOptions.Name = "grbOptions";
-            this.grbOptions.Size = new System.Drawing.Size(846, 100);
+            this.grbOptions.Size = new System.Drawing.Size(414, 830);
             this.grbOptions.TabIndex = 5;
             this.grbOptions.TabStop = false;
             this.grbOptions.Text = "Options";
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(7, 26);
+            this.btnPlay.Location = new System.Drawing.Point(6, 36);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(141, 68);
+            this.btnPlay.Size = new System.Drawing.Size(206, 53);
             this.btnPlay.TabIndex = 0;
-            this.btnPlay.Text = "Play Morse Code";
+            this.btnPlay.Text = "Play Morse Code Audio";
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
@@ -143,9 +144,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1077, 853);
+            this.ClientSize = new System.Drawing.Size(1501, 853);
             this.Controls.Add(this.grbOptions);
-            this.Controls.Add(this.grbTypes);
             this.Controls.Add(this.grbOutput);
             this.Controls.Add(this.grbInput);
             this.Name = "Form1";
