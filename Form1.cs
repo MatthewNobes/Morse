@@ -101,31 +101,62 @@ namespace Morse
                 //Swaps the labels around.
                 grbInput.Text = "Input Text";
                 grbOutput.Text = "Output Morse code";
-
-                //Wipes text boxes
-                txtInput.Text = "";
-                txtOutput.Text = "";
             }
             else
             {
                 //Swaps the labels around.
                 grbInput.Text = "Input Morse Code";
                 grbOutput.Text = "Output Text";
+            }
+            //Wipes text boxes
+            txtInput.Text = null;
+            txtOutput.Text = null;
+        }
 
-                //Wipes text boxes
-                txtInput.Text = "";
-                txtOutput.Text = "";
+
+        //Used to play audio for the code.
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            //By default txtoutput always has the morse in it.
+            Char[] MorseToPlay = txtOutput.Text.ToCharArray();
+            
+            //Just incase it is in the input box.
+            if (rbnDecode.Checked)
+            {
+                MorseToPlay = txtInput.Text.ToCharArray();
+            }
+
+            //Runs for as many characters there are.
+            for (int i = 0; i < MorseToPlay.Length; i++)
+            {
+                //Plays dot sound.
+                if (MorseToPlay[i] == '.')
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Short);
+                    player.Play();
+                }
+
+                //Plays dash sound.
+                else if (MorseToPlay[i] == '-')
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Long);
+                    player.Play();
+                }
+
+                //Executes as a longer wait for a space
+                else
+                {
+                    System.Threading.Thread.Sleep(1000);
+                }
+
+                //Leaves pause inbetween each one.
+                System.Threading.Thread.Sleep(900);
             }
         }
 
-        private void rbnEncode_CheckedChanged(object sender, EventArgs e)
+        private void rbnEncode_CheckedChanged_1(object sender, EventArgs e)
         {
-            switchIt();
-        }
-
-        private void rbnDecode_CheckedChanged(object sender, EventArgs e)
-        {
-            switchIt();
+            switchIt(); 
         }
     }
 }
