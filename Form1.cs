@@ -154,6 +154,7 @@ namespace Morse
             }
         }
 
+        //used to trigger label change.
         private void rbnEncode_CheckedChanged_1(object sender, EventArgs e)
         {
             switchIt(); 

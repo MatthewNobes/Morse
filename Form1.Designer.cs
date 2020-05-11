@@ -133,7 +133,7 @@
             // 
             this.btnPlay.Location = new System.Drawing.Point(6, 36);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(206, 53);
+            this.btnPlay.Size = new System.Drawing.Size(206, 78);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.Text = "Play Morse Code Audio";
             this.btnPlay.UseVisualStyleBackColor = true;
