@@ -37,6 +37,7 @@
             this.grbTypes = new System.Windows.Forms.GroupBox();
             this.grbOptions = new System.Windows.Forms.GroupBox();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.grbInput.SuspendLayout();
             this.grbOutput.SuspendLayout();
             this.grbTypes.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             // grbOptions
             // 
+            this.grbOptions.Controls.Add(this.btnCopy);
             this.grbOptions.Controls.Add(this.btnPlay);
             this.grbOptions.Controls.Add(this.grbTypes);
             this.grbOptions.Location = new System.Drawing.Point(1071, 12);
@@ -139,6 +141,16 @@
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(6, 120);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(206, 78);
+            this.btnCopy.TabIndex = 5;
+            this.btnCopy.Text = "Copy Output to Clipboard";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -150,6 +162,7 @@
             this.Controls.Add(this.grbInput);
             this.Name = "Form1";
             this.Text = "Morse Code Translator";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.grbInput.ResumeLayout(false);
             this.grbInput.PerformLayout();
             this.grbOutput.ResumeLayout(false);
@@ -172,6 +185,7 @@
         private System.Windows.Forms.GroupBox grbTypes;
         private System.Windows.Forms.GroupBox grbOptions;
         private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
 

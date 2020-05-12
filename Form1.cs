@@ -36,10 +36,6 @@ namespace Morse
                     ".--.", "--.-", ".-.",  "...", "-", "..-", "...-", ".--", "-..-", "-.--", //80-89
                     "--..", "", "", "", "","··--·-",  //90-95
                 };
-
-
-
-            //
             String Message = "";
 
             //Encoding code.
@@ -58,7 +54,6 @@ namespace Morse
             {
                 //Converts the input into an array of the words entered.
                 string[] words = txtInput.Text.Split(' ');
-
                 for (int i=0; i < words.Length; i++)
                 {
                     try
@@ -81,19 +76,11 @@ namespace Morse
                     {
                         Message = Message;
                     }
-                    
                 }
             }
-
             //Output Code
             txtOutput.Text = Message;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            switchIt();
-        }
-
         private void switchIt()
         {
             if (rbnEncode.Checked)
@@ -153,12 +140,20 @@ namespace Morse
                 System.Threading.Thread.Sleep(900);
             }
         }
-
         //used to trigger label change.
         private void rbnEncode_CheckedChanged_1(object sender, EventArgs e)
         {
             switchIt(); 
         }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtOutput.Text);
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            switchIt();
+        }
     }
 }
-
